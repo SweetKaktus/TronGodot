@@ -3,10 +3,12 @@ des collisionshape ayant des segment pour shape
 
 Le premier segment sera créé au startgame
 Etant donné que l'index de ce segment sera le dernier en liste,
-le point A sera egal à EVENTS.last_player_pos et le point B à EVENTS.player_pos
+le point A sera egal à EVENTS.last_player_pos et le point B à 
+EVENTS.player_pos
 Un nouveau segment sera créé à chaque chg_dir
 La création d'un nouveau segment impliquera les actions suivantes:
-	- set une fois le point a du segment précédent à EVENTS.previous_last_player_pos
+	- set une fois le point a du segment précédent à 
+EVENTS.previous_last_player_pos
 	- set une fois le point b du segment précédent à EVENTS.last_player_pos
 	- set une fois le point a du nouveau segment à EVENTS.last_player_pos
 	- set constamment le point b du nouveau segment à EVENTS.player_pos
@@ -16,6 +18,16 @@ La création d'un nouveau segment impliquera les actions suivantes:
 
 Pour se faire je dois:
 	- créer un tableau récupérant tous les segments de la ligne
-	== Les lignes suivantes ne sont pas sûres, je dois itérer pour prendre décision ==
+	== Les lignes suivantes ne sont pas sûres, je dois itérer pour 
+	prendre décision ==
 	- créer une fonction qui crée un nouveau segment
-	- créer une fonction qui modifie les points des 2 derniers segments de la liste
+	- créer une fonction qui modifie les points des 2 derniers segments 
+	de la liste
+
+
+Test de fonctionnement:
+	Je crée une scene contenant le static body et le collisionshape segment
+	Je la charge dans mon manager en tant que packedscene
+	Je crée une fonction qui instancie un élément en lui donnant la
+	position du point A pour spawn le static body et du point B pour le second
+	point du segment (pour la collision)

@@ -50,6 +50,8 @@ func over_the_game():
 	dir = Vector2.ZERO
 
 func start_game():
+	EVENTS.last_player_position = position
+	EVENTS.previous_last_player_position = position
 	dir = Vector2.UP
 
 func handle_rotation():
@@ -62,3 +64,7 @@ func handle_rotation():
 	if dir == Vector2.LEFT:
 		rotation_degrees = 270
 		
+# Si dir.x = 0 et dir.y != 0 alors pour elemnt dans EVENTS.segment_tab,
+# si player.x est entre les 2 elemnts et que player.y passe par 
+# un [element.b.y, element.a.y] alors BOOM
+# vice-versa pour dir.x et dir.y

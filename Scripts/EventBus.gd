@@ -15,7 +15,10 @@ var initial_position := Vector2(745, 400)
 
 var running : bool = false
 
+var segments_tab = []
+
 func _ready() -> void:
+	segments_tab = []
 	run_game.connect(start_game)
 	game_over.connect(over_the_game)
 	
